@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Saúl Alejandro Quiroz Vargas",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-rgb-led", "id": "rgb1", "top": -110, "left": 200, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 120, "left": 210, "attrs": { "color": "green" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 190, "left": 210, "attrs": { "value": "10000" } }
+  ],
+  "connections": [
+    [ "esp:GND.1", "rgb1:COM", "black", [ "v0" ] ],
+    [ "esp:D25", "rgb1:R", "red", [ "v0" ] ],
+    [ "esp:D26", "rgb1:G", "green", [ "v0" ] ],
+    [ "esp:D27", "rgb1:B", "blue", [ "v0" ] ],
+    [ "esp:3V3", "btn1:2.l", "orange", [ "v0" ] ],
+    [ "esp:D33", "btn1:1.l", "purple", [ "v0" ] ],
+    [ "esp:D33", "r1:1", "purple", [ "v0" ] ],
+    [ "esp:GND.2", "r1:2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
